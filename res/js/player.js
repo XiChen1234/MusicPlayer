@@ -2,10 +2,11 @@
 var list = [];
 var index = 0; // 保存当前播放的歌曲索引，默认0
 
+console.log("music.json")
 // 加载音乐列表信息（本地json）
 $.ajax({
     type: "GET",
-    url: "/res/music/music.json",
+    url: "./res/music/music.json",
     dataType: "json",
     success: function (data) {
         // console.log(data)
