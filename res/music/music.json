@@ -1,0 +1,28 @@
+{
+    "list": [
+        {
+            "name": "悬溺",
+            "url": "http://music.163.com/song/media/outer/url?id=1397345903.mp3",
+            "singer": "葛东琪",
+            "album": "第二街区",
+            "cover": "https://p1.music.126.net/CDhYcShQKH2VAMENuCxWWQ==/109951164166513349.jpg?param=177y177",
+            "time": "03:17"
+        },
+        {
+            "name": "南方姑娘",
+            "url": "http://music.163.com/song/media/outer/url?id=202373.mp3",
+            "singer": "赵雷",
+            "album": "赵小雷",
+            "cover": "https://p2.music.126.net/wldFtES1Cjnbqr5bjlqQbg==/18876415625841069.jpg?param=130y130",
+            "time": "05:32"
+        },
+        {
+            "name": "桥边姑娘",
+            "url": "http://music.163.com/song/media/outer/url?id=2085879343.mp3",
+            "singer": "网络歌手",
+            "album": "未知专辑",
+            "cover": "https://p2.music.126.net/sQAvnmkX4L7hB3Zc05WHJw==/109951168289819696.jpg?param=130y130",
+            "time": "01:28"
+        }
+    ]
+}

@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+
+.player-warp{
+    position: relative;
+}
+
+/*歌曲信息卡片*/
+.player-warp .player-info{
+    width: 90%;
+    position: absolute;
+    /* top: -100%; */
+    top: 0;
+    left: 50%;
+    padding: 10px;
+    transform: translateX(-50%);
+    z-index: -1;
+    /* 毛玻璃生成器 */
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3.5px);    
+    -webkit-backdrop-filter: blur(3.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    /* 毛玻璃生成器结束 */
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+}
+.player-info .info{
+    width: 60%;
+    font-size: 10px;
+}
+.info .name{
+    font-size: 14px;
+    font-weight: bold;
+}
+.info .singer{
+    color: #757474;
+    line-height: 20px;
+}
+.info .music-progress{
+    width: 100%;
+}
+.music-progress .top{
+    display: flex;
+    justify-content: space-between;
+    color: #f2709b;
+    line-height: 20px;
+}
+/* 进度条 */
+.music-progress .bar{
+    width: 100%;
+    height: 3px;
+    background-color: #cccaca;
+    border-radius: 10px;
+    margin-top: 3px;
+}
+.bar .line{
+    width: 0%;
+    /* width: 50%; */
+    height: 100%;
+    background-color: #f2709b;
+}
+
+/* 音乐控制器 */
+.player-warp .player-control{
+    width: 360px;
+    height: 80px;
+    padding: 20px 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10; /* 元素层级最高 */
+}
+
+/* 唱片 */
+.player-control .cover{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-top: -60px; /* 略向上抬升 */
+    padding: 6px;
+    position: relative;
+    animation: circleAmin 5s infinite linear;
+    animation-play-state: paused;
+}
+.player-control .cover::before{
+    content: "";
+    display: inline-block; /* 变为行内元素 */
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%; /* 以圆圈左上角为顶点再50%50%处定位*/
+    transform: translate(-50%, -50%); /* 偏移 */
+}
+.cover img{
+    width: 100%;
+    border-radius: 50%;
+}
+/* 唱片旋转动画 */
+@keyframes circleAmin {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* 控制按钮 */
+.player-control .control{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.control i{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 25px;
+    color: #b3b0b0;
+    cursor: pointer;
+    transition: all 0.4s; /* 实现背景平滑过渡*/
+}
+.control i:hover{
+    border-radius: 6px;
+    background-color: rgba(71, 70, 70, 0.2);
+    color: #fff;
+}
+
+/* 模态框 */
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.modal .box{
+    width: 30%;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.box .top{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top .close{
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.4s; /* 按钮旋转的过渡 */
+}
+.top .close:hover{
+    transform: rotate(180deg) /* 按钮旋转 */
+}
+.box .wrapper{
+    width: 100%;
+    height: calc(100%-40px); /* 为了设置滚动条，故需要设置高度 */
+    overflow-y: auto;
+}
+.wrapper .list{
+    list-style: none;
+}
+.list li{
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(186, 182, 182);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.play{
+    margin-right: 20px;
+    transition: transform 0.4s;
+    cursor: pointer;
+}
+.play:hover{
+    transform: scale(1.2);
+}
+.playing{
+    color: #773333;
+}
+
+/* 界面背景 */
+.mask_bg{
+    position: absolute;
+    top: 0;
+    left: 0; /* 定位到左上角 */
+    z-index: -2; /* 最底层 */
+    width: 100%;
+    height: 100%;
+
+    /* 模糊 */
+    filter: blur(50px);
+    transition: all 3s;
+}

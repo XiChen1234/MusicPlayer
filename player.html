@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <link rel="icon" href="./res/img/music.png" sizes="16x16">
+    <link rel="stylesheet" href="./res/css/player.css">
+    <link rel="stylesheet" href="./res/css/font-awesome-4.7.0/css/font-awesome.css">
+    <script src="./res/js/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <!-- 音乐播放器 -->
+    <div class="player-warp">
+        <!-- 歌曲信息卡片 -->
+        <div class="player-info">
+            <div class="info">
+                <div class="name">悬溺</div>
+                <div class="singer singer-dot">葛东琪 - 歌曲专辑</div>
+                <!-- 进度条 -->
+                <div class="music-progress">
+                    <div class="top">
+                        <span class="start">00:00</span>
+                        <span class="end">03:17</span>
+                    </div>
+                    <div class="bar">
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 音乐控制器 -->
+        <div class="player-control">
+            <!-- 唱片 -->
+            <div class="cover">
+                <img src="./res/img/109951164166513349.jpg" alt="封面">
+            </div>
+            <!-- 控制按钮 -->
+            <div class="control">
+                <i id="lastBtn" class="fa fa-step-backward"></i>
+                <i id="playBtn" class="fa fa-play"></i>
+                <!-- <i class="fa fa-pause"></i> -->
+                <i id="nextBtn" class="fa fa-step-forward"></i>
+                <i id="modalBtn" class="fa fa-reorder"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框 -->
+    <div class="modal">
+        <div class="box">
+            <div class="top">
+                <div class="title">音乐列表</div>
+                <div id="closeBtn" class="close">
+                    <i class="fa fa-remove"></i>
+                </div>
+            </div>
+            <div class="wrapper">
+                <ul class="list">
+                    <!-- <li class="playing">
+                        <span>01.悬溺 -- 葛东琪</span>
+                        <span class="fa fa-play-circle"></span>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 界面背景 -->
+    <div class="mask_bg"></div>
+
+    <!-- 音乐 -->
+    <audio src=""></audio>
+
+    <script src="./res/js/player.js"></script>
+</body>
+
+</html>
